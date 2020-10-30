@@ -1,7 +1,7 @@
 version: "3"
 services:
   mainNode:
-    image: zfq17876911936/chaojigongshi-xuperchain-mainnode:1.0-20201029
+    image: zfq17876911936/chaojigongshi-xuperchain-mainnode:1.0-20201029-nofee
     container_name: xchain
     ports:
       - "37101:37101"
@@ -11,7 +11,7 @@ services:
       - xchain
     restart: on-failure
   otherNode:
-    image: zfq17876911936/chaojigongshi-xuperchain-othernode:1.0-20201029
+    image: zfq17876911936/chaojigongshi-xuperchain-othernode:1.0-20201029-nofee
     container_name: other
     ports:
       - "37102:37101"
@@ -23,7 +23,7 @@ services:
       - mainNode 
     restart: on-failure
   anotherNode:
-    image: zfq17876911936/chaojigongshi-xuperchain-othernode:1.0-20201029
+    image: zfq17876911936/chaojigongshi-xuperchain-othernode:1.0-20201029-nofee
     container_name: another
     ports:
       - "37103:37101"
