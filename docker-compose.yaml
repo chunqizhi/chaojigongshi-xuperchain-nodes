@@ -34,15 +34,14 @@ services:
     depends_on:
       - mainNode
     restart: on-failure
-  xupercc:
-    image: zfq17876911936/chaojigongshi-xupercc:1.0-20201030
-    container_name: xupercc
+  httpGw:
+    image: zfq17876911936/chaojigongshi-xuperchain-httpgw:1.0-20201103
+    container_name: httpgw
+    command: -gateway_endpoint xchain:37101
     ports:
-      - "8080:8080"
+      - "8098:8098"
     networks:
       - xchain
-    depends_on:
-      - mainNode
     restart: on-failure
 networks:
   xchain:
