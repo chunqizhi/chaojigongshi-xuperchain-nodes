@@ -43,16 +43,6 @@ services:
     networks:
       - xchain
     restart: on-failure
-  xupercc:
-    image: zfq17876911936/chaojigongshi-xupercc:1.0-20201030
-    container_name: xupercc
-    ports:
-      - "8080:8080"
-    networks:
-      - xchain
-    depends_on:
-      - mainNode
-    restart: on-failure
 networks:
   xchain:
 
